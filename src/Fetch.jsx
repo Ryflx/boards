@@ -5,6 +5,8 @@ function FetchBoards() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [newBoardName, setNewBoardName] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+
 
 
   useEffect(() => {
@@ -64,7 +66,13 @@ function FetchBoards() {
     })
     .then(data => {
       console.log('Board created:', data);
-      setNewBoardName(''); // Reset input field
+      setNewBoardName('');
+      setSuccessMessage('Board created successfully!'); // Set success message
+
+    // Clear the success message after 3 seconds
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 3000); // Reset input field
       // Here you could fetch the boards again to refresh the list or update the state directly
     })
     .catch(error => {
@@ -87,6 +95,8 @@ function FetchBoards() {
           placeholder="Enter new board name"
         />
         <button onClick={createBoard}>Create Board</button>
+        {/* Display the success message if it exists */}
+      {successMessage && <div>{successMessage}</div>}
       </div>
       <ul>
         {boards.map(board => (
