@@ -5,6 +5,17 @@
   text-align: center;
 }
 
+/* src/custom.css */
+body, .App {
+  background-color: #000; /* Set the background color to black */
+  color: #fff; /* Set the text color to white for contrast */
+}
+
+.App-header {
+  background-color: #333; /* Slightly lighter background for the header */
+}
+
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,3 +51,11 @@
 .read-the-docs {
   color: #888;
 }
+
+/* App.css */
+.App-header {
+  background-color: #121212; /* Darker shade for the header */
+}
+
+/* Adjust other styles as needed for your dark theme */
+
